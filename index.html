@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Gallery</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-dark">
+    <div class="container-fluid py-4">
+      <h2 class="text-center text-white mb-4">Video Gallery</h2>
+
+      <!-- Controls Header: File Select & Search Bar -->
+      <div class="row justify-content-center g-3 mb-4">
+        <!-- File Select Dropdown -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <label for="fileSelect" class="form-label text-white fw-bold"
+            >Select File / Batch:</label
+          >
+          <select
+            id="fileSelect"
+            class="form-select bg-dark text-white border-secondary"
+          >
+            <option value="all">Auto-load All Files (Infinite Scroll)</option>
+            <!-- File options dynamically populated by app.js -->
+          </select>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="col-12 col-sm-6 col-md-5">
+          <label for="searchInput" class="form-label text-white fw-bold"
+            >Search Title:</label
+          >
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control bg-dark text-white border-secondary"
+            placeholder="Type a word to filter videos..."
+          />
+        </div>
+      </div>
+
+      <!-- Cards Grid Container -->
+      <div id="gallery" class="row g-2 g-sm-3"></div>
+
+      <!-- Loading / Status Indicator -->
+      <div id="loading" class="text-center text-white py-5">Loading...</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
